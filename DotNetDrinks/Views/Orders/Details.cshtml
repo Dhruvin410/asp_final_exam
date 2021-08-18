@@ -1,8 +1,6 @@
 ﻿@model DotNetDrinks.Models.Order
 
-@{
-    ViewData["Title"] = "Details";
-}
+@{ ViewData["Title"] = "Details"; }
 
 <h1>Order Details</h1>
 
@@ -74,16 +72,30 @@
             <th>Product</th>
             <th class="text-right">Quantity</th>
             <th class="text-right">Price</th>
+            <th class="text-right">Total</th>
         </tr>
     </thead>
     @foreach (var item in Model.OrderDetails)
-    { 
-        <tr>
-            <td>@item.Product.Name</td>
-            <td class="text-right">@item.Quantity</td>
-            <td class="text-right">@item.Price.ToString("C")</td>
-        </tr>
-    }
+    {
+<tr>
+    <td>@item.Product.Name</td>
+    <td>
+        @if (item.Product.Image != null)
+        {
+<a href="javascript:;" onClick="openImage('~/img/product-uploads/@item.Product.Image')">
+    <img src="~/img/product-uploads/@item.Product.Image" alt="Product Image" class="thumb" />
+</a> }
+                else
+                {
+<a href="javascript:;" onClick="window.open('www.google.com')">
+    <img src="~/img/product-uploads/placeholder.gif" alt="Placeholder Image" target="_blank" class="thumb" />
+</a>}
+    </td>
+
+    <td class="text-right">@item.Quantity</td>
+    <td class="text-right">@item.Price.ToString("C")</td>
+    <td class="text-right">@String.Format("{0:C}", item.Price * item.Quantity) </td>
+</tr>}
 </table>
 <div>
     <a asp-action="Index">Back to List</a>
