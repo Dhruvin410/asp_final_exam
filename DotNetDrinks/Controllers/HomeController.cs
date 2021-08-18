@@ -22,6 +22,10 @@ namespace DotNetDrinks.Controllers
         {
             return View();
         }
+        public IActionResult Support()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {

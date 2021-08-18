@@ -38,23 +38,24 @@
 
                         @if (User.IsInRole("Administrator"))
                         {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Brands" asp-action="Index">Brands</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Categories" asp-action="Index">Categories</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Products" asp-action="Index">Products</a>
-                            </li>
-                        }
-                        @* Remove if statement to show the store to any user *@
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Brands" asp-action="Index">Brands</a>
+                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-controller="Categories" asp-action="Index">Categories</a>
+                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link text-dark" asp-controller="Products" asp-action="Index">Products</a>
+                                                    </li> } @* Remove if statement to show the store to any user *@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-controller="Orders" asp-action="Index">Orders</a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-controller="Store" asp-action="Index">Store</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Support">Support</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
@@ -71,6 +72,7 @@
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2021 - DotNetDrinks - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <p>Name : Dhruvin Patel Dhruvin Patel (200427081)</p>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
